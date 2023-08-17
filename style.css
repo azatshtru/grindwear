@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+
+  background: #101010;
+  color: white;
+
+  overflow: hidden;
+}
+
+.storepage {
+  display: flex;
+  justify-content: flex-end;
+
+  width: 100vw;
+  height: 100vh;
+}
+
+.marquee-container {
+  width: 25vw;
+}
+
+.marquee {
+  display: flex; 
+  transform: rotate(-90deg);
+}
+
+.marquee h1 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 17em;
+
+  animation: marquee 30s linear infinite;
+
+  user-select: none;
+  margin-top: 5px;
+  margin-bottom: 10vw;
+}
+
+.scr1 {
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+
+  animation: scroll 24s linear infinite;
+}
+
+.scroll {
+  width: 20vw;
+  height: max-content;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: #313131;
+  padding-inline: 10px;
+}
+
+.image-container {
+  height: 400px;
+  width: 100%;
+  overflow: hidden;
+
+  margin-block: 5px;
+  border-radius: 15px;
+
+  transform: scale(100%) rotate(0deg);
+  z-index: 0;
+
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.image-container:hover {
+  transform: scale(110%) rotate(8deg);
+  z-index: 1;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+@keyframes marquee {
+  from{
+    transform: translate(-200%);
+  }
+  to {
+    transform: translate(-100%);
+  }
+}
+
+@keyframes scroll {
+  from{
+    transform: translate(0, -100%);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
